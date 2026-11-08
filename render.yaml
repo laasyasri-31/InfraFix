@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: inrafix-api
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: ACCESS_TOKEN_HOURS
+        value: "12"
+      - key: OTP_PROVIDER
+        value: "auto"
+      - key: OTP_DEMO_MODE
+        value: "false"
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_VERIFY_SERVICE_SID
+        sync: false
+      - key: OTP_EXPIRY_MINUTES
+        value: "5"
+      - key: OTP_COOLDOWN_SECONDS
+        value: "30"
+      - key: OTP_MAX_ATTEMPTS
+        value: "5"
+      - key: UPLOAD_DIR
+        value: /opt/render/project/src/uploads
+      - key: MAX_ACTIVE_CASES_PER_WORKER
+        value: "3"

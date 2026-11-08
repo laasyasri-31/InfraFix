@@ -1,0 +1,68 @@
+# =========================================================
+# INFRAFIX GITIGNORE
+# =========================================================
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local database
+inrafix.db
+
+# Runtime uploads
+backend/uploads/*
+uploads/*
+!/uploads/.gitkeep
+
+# Node / frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# TypeScript build cache
+frontend/tsconfig.tsbuildinfo
+
+# Temporary files
+temp.txt
+
+# Large / raw NYC 311 data
+dataset/311-service-requests-from-2010-to-present.csv
+dataset/311-web-content-services.csv
+
+# Dataset reference files
+dataset/311_SR_Data_Dictionary_2018.xlsx
+dataset/*metadata*.json
+dataset/socrata_metadata_*.json
+
+# Keep InfraFix derived/demo datasets
+!dataset/inrafix_nyc311_sample.csv
+!dataset/inrafix_nyc311_mapped.csv
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Demo credentials (keep out of GitHub)
+INFRAFIX_LOGIN_CREDENTIALS.txt
+
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+*.db
+*.db-journal
+uploads/
+CIVICFIX_LOGIN_CREDENTIALS.txt
